@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: todo-app-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: ALLOW_FILE_FALLBACK
+        value: 'false'
