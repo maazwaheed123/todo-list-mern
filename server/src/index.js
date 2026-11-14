@@ -14,6 +14,24 @@ const origins = (process.env.CORS_ORIGIN || '*')
 app.use(cors({ origin: origins.includes('*') ? true : origins }));
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({
+    name: 'To-Do List API',
+    status: 'running',
+    docs: 'https://github.com/maazwaheed123/todo-list-mern',
+    endpoints: {
+      health: 'GET /api/health',
+      listTasks: 'GET /api/tasks?search=&status=&from=&to=',
+      createTask: 'POST /api/tasks',
+      getTask: 'GET /api/tasks/:id',
+      updateTask: 'PATCH /api/tasks/:id',
+      updateStatus: 'PATCH /api/tasks/:id/status',
+      deleteTask: 'DELETE /api/tasks/:id',
+      weeklySummary: 'GET /api/tasks/summary/weeks',
+    },
+  });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', store: getRepo().kind, time: new Date().toISOString() });
 });
