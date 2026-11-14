@@ -4,6 +4,15 @@ A task manager with weekly organisation, built as a **web app**: React + Vite fr
 mobile-first UI that follows the supplied Figma, a responsive desktop layout on top of it, and its
 own Express + MongoDB API.
 
+| | |
+| --- | --- |
+| **Live app** | https://todo-list-mern-maaz.netlify.app |
+| **API** | https://todo-list-mern-uhpa.onrender.com |
+| **Repository** | https://github.com/maazwaheed123/todo-list-mern |
+
+The API runs on Render's free tier, which sleeps after 15 minutes of inactivity — the first request
+after a quiet spell can take 30–50 seconds while it wakes up. Data lives in MongoDB Atlas.
+
 ```
 todo-app/
 ├── client/          React 18 + Vite + Tailwind (deploy to Netlify)
